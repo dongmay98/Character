@@ -1,0 +1,118 @@
+.body,
+.html{
+  height: 100%;
+}
+.main{
+  height: 800px;
+  border: solid red;
+}
+.frame{
+  position: relative;
+  width: 500px;
+  height: 600px;
+  background-image: url("images/Frame.png") ;
+  background-repeat: no-repeat;
+  margin:  0 auto;
+  animation: jump 1s infinite;
+}
+.mouse {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  border: 2px black;
+  top: 350px;
+  left: 150px;
+  animation: changeSize 1s infinite;
+}
+
+.mouse::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 80%;
+  height: 80%;
+  border-radius: 60%;
+  background-color: #c56161;
+}
+
+.arm {
+  position: absolute;
+  z-index: -1;
+  width: 250px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #C17373;
+  
+}
+.La{
+  top: 360px;
+  left: -60px;
+  transform: rotate(-30deg);
+  animation: armCrossL 1s infinite;
+}
+.Ra{
+  top: 360px;
+  left: 210px; 
+  transform: rotate(30deg);
+  animation: armCrossR 1s infinite;
+}
+
+.leg{
+  position: absolute;
+  z-index: -1;
+  width: 80px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #C17373;
+}
+.Ll{
+  top: 550px;
+  left: 80px;
+}
+.Rl{
+  top: 550px;
+  left: 230px;
+}
+
+@keyframes changeSize {
+  0% {
+    width: 100px;
+    height: 50px;
+  }
+  100% {
+    width: 140px;
+    height: 80px;
+  }
+}
+
+@keyframes armCrossL {
+  0% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes armCrossR {
+  0% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0px;
+  }
+
+  100% {
+    bottom: 50px;
+  }
+}
